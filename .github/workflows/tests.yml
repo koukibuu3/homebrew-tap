@@ -1,0 +1,26 @@
+name: Formula tests
+
+on:
+  push:
+    branches: [main]
+    paths: ['Formula/**']
+  pull_request:
+    paths: ['Formula/**']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: tap として登録する
+        run: |
+          set -euo pipefail
+          tap_dir="$(brew --repository koukibuu3/tap)"
+          mkdir -p "$(dirname "$tap_dir")"
+          ln -s "$GITHUB_WORKSPACE" "$tap_dir"
+      - run: brew audit --strict --online koukibuu3/tap/swb-cli
+      - run: brew install --verbose koukibuu3/tap/swb-cli
+      - run: brew test koukibuu3/tap/swb-cli
