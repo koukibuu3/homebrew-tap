@@ -1,8 +1,8 @@
 class SwbCli < Formula
   desc "Sprint analytics CLI for Scrum Workbench (Jira / GitHub metrics and reports)"
   homepage "https://scrumworkbench.com"
-  url "https://github.com/koukibuu3/homebrew-tap/releases/download/swb-cli-v0.1.3/swb-cli-0.1.3.tar.gz"
-  sha256 "c93894bb64cebb75b295a996cdb3623bbc77b2a1d32a57fb4ab9b4c00de82b0f"
+  url "https://github.com/koukibuu3/homebrew-tap/releases/download/swb-cli-v0.1.4/swb-cli-0.1.4.tar.gz"
+  sha256 "900acfda4a7dd5197e4e248e84defd016c328fa11d445f8845eb20ee5570fcad"
   license "MIT"
 
   depends_on "gh"
